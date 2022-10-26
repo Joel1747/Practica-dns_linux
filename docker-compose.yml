@@ -1,0 +1,26 @@
+version: "3.9" 
+services:
+  asir_cliente: 
+    container_name: asir_clientep1
+    image: alpine
+    networks:
+      - bind9_subnetp1
+    stdin_open: true
+    tty: true
+    dns:
+      - 10.1.1.254
+  bind9:
+    container_name: asir2_bind9_p1
+    image: internetsystemsconsortium/bind9:9.16
+    ports:
+      - 5400:53/udp
+      - 5400:53/tcp
+    networks:
+      bind9_subnetp1:
+        ipv4_address: 10.1.1.254 #ip fija del servidor
+    volumes:
+      - /home/asir2a/Documentos/SRI/p2/confg:/etc/bind
+      - /home/asir2a/Documentos/SRI/p2/zonas:/var/lib/bind
+networks:
+  bind9_subnetp1:
+    external: true   
