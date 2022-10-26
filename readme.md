@@ -145,3 +145,5 @@ En caso de querer eliminar el servicio usaremos
 cuando modifiquemos el servicio tendremos que usar el comando down y up para borrar el viejo y subir el nuevo.
 
 Con esto tendremos nuestro Docker-compose listo para funcionar.
+
+![foto ping](https://github.com/Joel1747/Practica-dns_linux/blob/main/ping.png)
